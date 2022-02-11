@@ -2,7 +2,7 @@
 	import '../global.css';
 	import Header from '$lib/Header.svelte';
 
-	import { state, dark } from '$lib/_stores';
+	import { dark } from '$lib/_stores';
 	import { browser } from '$app/env';
 
 	$: if (browser) {
