@@ -1,0 +1,42 @@
+body {
+	/* box-sizing: border-box; */
+	background: var(--back);
+	margin: 0;
+	transition: background-color 0.25s, color 0.25s;
+}
+
+[data-theme='light'] {
+	--back: white;
+	--txt: #212529;
+	--ltxt: #2e2e2e;
+	--hr: #0000001a;
+	--toggle: rotateY(0deg);
+	--hover: rgba(33, 37, 41, 0.05);
+}
+
+[data-theme='dark'] {
+	--back: #212529;
+	--txt: white;
+	--ltxt: #ececec;
+	--hr: #ffffff1a;
+	--toggle: rotateY(180deg);
+	--hover: rgba(236, 236, 236, 0.07);
+}
+
+@font-face {
+	font-family: 'fa';
+	font-weight: 100;
+	src: url('/static/fab.woff2') format('woff2'), url('/static/fab.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'fa';
+	font-weight: 200;
+	src: url('/static/far.woff2') format('woff2'), url('/static/far.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'fa';
+	font-weight: 300;
+	src: url('/static/fas.woff2') format('woff2'), url('/static/fas.woff') format('woff');
+}
