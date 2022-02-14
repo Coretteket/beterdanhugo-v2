@@ -2,7 +2,7 @@
 	import Icon from './Icon.svelte';
 
 	import { page } from '$app/stores';
-	import { dark } from './_stores';
+	import { dark } from './stores';
 
 	$: faqUrl = $page.url.pathname === '/faq' ? '/' : '/faq';
 
@@ -27,8 +27,10 @@
 
 <style lang="scss">
 	div {
-		margin-left: auto;
-		margin-top: 0.2em;
+		margin: 0.3em 0 0 auto;
+		@media (max-width: 765px) {
+			margin: 0.1em 0 0.5em 0;
+		}
 		& > * {
 			display: inline;
 			cursor: pointer;
@@ -40,6 +42,7 @@
 			opacity: 0.8;
 			transition: opacity 0.2s;
 			transform: scale(1);
+
 			&:hover {
 				opacity: 1;
 			}
