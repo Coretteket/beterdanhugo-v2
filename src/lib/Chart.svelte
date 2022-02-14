@@ -1,46 +1,24 @@
 <script>
-	import { onMount, afterUpdate, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
+	import { options } from './chart';
 
-	export let data = {
-		labels: [],
-		datasets: [{ data: [] }],
-		yMarkers: {},
-		yRegions: []
-	};
+	import { writable } from 'svelte/store';
 
-	export let type = 'line';
-	export let options = {};
-	export let plugins = [];
+	let data = writable({
+		series: [
+			[
+				5, 4, 4, 8, 11, 15, 28, 44, 65, 90, 125, 156, 187, 208, 225, 240, 255, 250, 240, 225, 208,
+				187, 156, 125, 90, 65, 44, 28, 15, 11, 8, 4, 4, 5
+			]
+		]
+	});
 
-	let chart = null;
-	let chartRef;
-
+	let loaded;
 	onMount(() => {
-		chart = new Chart(chartRef, {
-			type,
-			data,
-			options,
-			plugins
-		});
+		loaded = true;
 	});
 
-	afterUpdate(() => {
-		if (!chart) return;
-		chart.data = data;
-		chart.type = type;
-		chart.options = options;
-		chart.plugins = plugins;
-		chart.update();
-	});
-
-	onDestroy(() => {
-		chart = null;
-	});
+	$: if (loaded) new Chartist.Line('.ct-chart', $data, options);
 </script>
 
-<svelte:head>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js@3/dist/chart.min.js" crossorigin="anonymous">
-	</script>
-</svelte:head>
-
-<canvas bind:this={chartRef} />
+<div class="ct-chart ct-octave" />
