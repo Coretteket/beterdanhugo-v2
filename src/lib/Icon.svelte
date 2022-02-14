@@ -1,5 +1,5 @@
 <script>
-	import icons from '$lib/_icons';
+	import icons from './icons';
 	export let name = '';
 	export let brand = false;
 	export let solid = false;
