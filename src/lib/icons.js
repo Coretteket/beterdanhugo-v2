@@ -1,11 +1,15 @@
 let icons = {
-	github: 'f09b;',
-	twitter: 'f099;',
+	github: 'f09b',
+	twitter: 'f099',
+	facebook: 'f082',
+	linkedin: 'f08c',
+
+	mail: 'f0e0',
 	faq: 'f059',
-	sun: 'f185',
-	moon: 'f186',
+	exclamation: 'f06a',
 	back: 'f0a8',
 	theme: 'f042',
+
 	socdis: 'e068',
 	workhome: 'e065',
 	masks: 'e063',
@@ -20,7 +24,9 @@ let icons = {
 	edlow: 'f1ae',
 	lockdown: 'f30d',
 	curfew: 'f34e',
-	borders: 'f072'
+	borders: 'f072',
+	shield: 'e06c',
+	share: 'f14d'
 };
 
 export default icons;
